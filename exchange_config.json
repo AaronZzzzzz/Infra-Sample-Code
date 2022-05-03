@@ -1,0 +1,49 @@
+{
+    "BinanceGlobalSpot": {
+        "url": [
+            "https://api.binance/com",
+            "https://api1.binance/com",
+            "https://api2.binance/com",
+            "https://api3.binance/com"
+        ],
+        "ip_weight_limit": 1200,
+        "id_weight_limit": 1200,
+
+        "test_new_order": {
+            "type": "POST",
+            "url": "/api/v3/order/test",
+            "ip_weight": 1,
+            "id_weight": 0
+        },
+        "new_order": {
+            "type": "POST",
+            "url": "/api/v3/order",
+            "ip_weight": 1,
+            "id_weight": 1
+        },
+        "cancel_order": {
+            "type": "DELETE",
+            "url": "/api/v3/order",
+            "ip_weight": 1,
+            "id_weight": 0
+        },
+        "cancel_all_open_orders_on_a_symbol": {
+            "type": "DELETE",
+            "url": "/api/v3/openOrders",
+            "ip_weight": 1,
+            "id_weight": 0
+        },
+        "query_order": {
+            "type": "GET",
+            "url": "/api/v3/order",
+            "ip_weight": 2,
+            "id_weight": 0
+        },
+        "current_open_orders": {
+            "type": "GET",
+            "url": "/api/v3/openOrders ",
+            "ip_weight": 3,
+            "id_weight": 0
+        }
+    }
+}
