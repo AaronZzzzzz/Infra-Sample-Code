@@ -1,0 +1,33 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import time
+
+plt.ion()
+plt.figure(1, figsize=(20, 5))
+t_list = []
+result_list = []
+t = 0
+plt.show()
+
+
+x = np.arange(200)
+y = np.random.rand(200)
+while True:
+    plt.clf()
+    t_list.append(t)
+    y[0:-1] = y[1:]
+    y[-1] = np.random.rand()
+    plt.plot(x, y, c='r', ls='-', mec='b', mfc='w')
+    plt.pause(0.1)
+    # time.sleep(0.1)
+
+
+const child_process = require('child_process')
+const handle = child_process.spawn('python', ['hybridpy.py'])
+handle.stdout.on('data', (data) => {
+    console.log(JSON.parse(data.toString('utf8')))
+})
+
+var intid = setInterval(() => {
+    handle.stdin.write('{"qqq":2}\n')
+}, 200)
